@@ -1,4 +1,6 @@
-import Data.Char
+module Ch7 where
+
+import Data.Char (chr, ord)
 import Data.List (sort)
 
 type Bit = Int
@@ -79,7 +81,7 @@ winner' bs = case rank (rmempty bs) of
 -- a
 all :: (a -> Bool) -> [a] -> Bool
 -- all _ [] = True
--- all f (x : xs) = f x && Main.all f xs
+-- all f (x : xs) = f x && Ch7.all f xs
 -- all f = foldr ((&&) . f) True
 all p = and . map p
 
@@ -92,14 +94,14 @@ any p = or . map p
 takeWhile :: (a -> Bool) -> [a] -> [a]
 takeWhile _ [] = []
 takeWhile p (x : xs)
-  | p x = x : Main.takeWhile p xs
+  | p x = x : Ch7.takeWhile p xs
   | otherwise = []
 
 -- d
 dropWhile :: (a -> Bool) -> [a] -> [a]
 dropWhile _ [] = []
 dropWhile p (x : xs)
-  | p x = Main.dropWhile p xs
+  | p x = Ch7.dropWhile p xs
   | otherwise = x : xs
 
 -- ex3

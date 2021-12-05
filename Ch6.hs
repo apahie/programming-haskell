@@ -1,3 +1,5 @@
+module Ch6 where
+
 -- ex1
 fac :: Int -> Int
 fac 0 = 1
@@ -15,7 +17,7 @@ sumdown n
 -- ex3
 (^) :: Int -> Int -> Int
 m ^ 0 = 1
-m ^ n = m * (m Main.^ (n - 1))
+m ^ n = m * (m Ch6.^ (n - 1))
 
 -- ex4
 euclid :: Int -> Int -> Int
@@ -44,7 +46,7 @@ replicate1 n x = x : replicate1 (n -1) x
 (!!) :: [a] -> Int -> a
 [] !! _ = error "empty list!!"
 (x : _) !! 0 = x
-(_ : xs) !! n = xs Main.!! (n -1)
+(_ : xs) !! n = xs Ch6.!! (n -1)
 
 -- e
 elem1 :: Eq a => a -> [a] -> Bool
